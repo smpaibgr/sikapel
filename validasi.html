@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Memuat Validasi Kartu...</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f8fafc; }
+    .loader { border: 4px solid #e2e8f0; border-top: 4px solid #1a237e; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 16px; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .text { color: #475569; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <div class="loader"></div>
+    <div class="text">Membuka Halaman Validasi...</div>
+  </div>
+  <script>
+    // Ambil parameter dari URL saat ini (misal: ?nisn=123&sn=456)
+    var params = window.location.search;
+    var redirectUrl = "https://script.google.com/macros/s/AKfycbwjI_pFW3IPDxcaVvJAB838x2_309AUCdVqVW4R3E8ItVl5an05MXX2CPhmh_WJEi_f/exec?page=validasi";
+    
+    // Jika ada parameter, gabungkan
+    if (params) {
+       redirectUrl += params.replace('?', '&');
+    }
+    
+    window.location.replace(redirectUrl);
+  </script>
+</body>
+</html>
